@@ -1,12 +1,10 @@
-name: github project
+name: GitHub Actions Demo
 on: push
 jobs:
-explore-github:
-runs_on: ubuntu-latest
-steps:
--name: print github event
-run: echo "${{github_event.name}};
--name: print os 
-run: echo " ${{runner.os}} server"
--name: print actions
-uses: actions/checkout@v4
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the triggering event
+        run: echo "The job was triggered by ${{ github.event_name }}."
+      - name: Print the OS of the runner
+        run: echo " This job is running on a ${{ runner.os }} server "
