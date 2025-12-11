@@ -1,5 +1,5 @@
 name : github project
-on :push
+on: push
 jobs :
 explore github
 runs_on:ubuntu_latest
