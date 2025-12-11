@@ -1,12 +1,12 @@
-name : github project
+name: github project
 on: push
-jobs :
+jobs:
 explore github
-runs_on:ubuntu_latest
+runs_on: ubuntu-latest
 steps:
-name:print github event
-run :echo "${{github_event.name}};
-name :print os 
-run : echo " ${{runner.os}} server"
-name :print actions
-uses :actions/checkout@v4
+-name: print github event
+run: echo "${{github_event.name}};
+-name: print os 
+run: echo " ${{runner.os}} server"
+-name: print actions
+uses: actions/checkout@v4
