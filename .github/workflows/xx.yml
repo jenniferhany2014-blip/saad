@@ -1,7 +1,7 @@
 name: github project
 on: push
 jobs:
-explore github
+explore-github:
 runs_on: ubuntu-latest
 steps:
 -name: print github event
