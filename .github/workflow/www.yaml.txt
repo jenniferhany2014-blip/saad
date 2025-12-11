@@ -1,12 +1,19 @@
-name : github project
-on :push
-jobs :
-explore github
-runs_on:ubuntu_latest
-steps:
-name:print github event
-run :echo "${{github_event.name}};
-name :print os 
-run : echo " ${{runner.os}} server"
-name :print actions
-uses :actions/checkout@v4
+name: Run automated tests
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  TestJob:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the project's source code from the repository.
+      - name: Checkout project sources
+        uses: actions/checkout@v4
+# Step 2: Set up the Gradle build tool on the runner.
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      # Step 3: Run tests using the Gradle Wrapper.
+      - name: Run Test with Gradle Wrapper
+        run: ./gradlew test
